@@ -1,0 +1,23 @@
+pip install virtualenv
+
+python -m venv venv
+
+venv\scripts\activate
+
+python.exe -m pip install --upgrade pip
+
+pip install faker
+pip install mysql-connector-python
+
+to export:
+mysqldump -u root -p root_password --host=localhost mega > megabackup.sql
+
+
+to import:
+mysql -u root -p --host=destination_server mydatabase < /path/to/destination/backup.sql
+
+
+
+
+
+
