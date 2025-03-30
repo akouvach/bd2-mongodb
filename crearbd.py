@@ -98,7 +98,7 @@ for nro_pedido in range(NUM_PEDIDOS):
     for nro_producto in random_products:
         try:
             cursor.execute("INSERT INTO detalles_pedido (pedido_id, producto_id, cantidad) VALUES (%s, %s, %s)",
-                    (nro_pedido, nro_producto, random.randint(1, 50)))
+                    (nro_pedido+1, nro_producto, random.randint(1, 50)))
         except Error as e:
             print(f"Error al insertar detalle de pedido: {e}")
 

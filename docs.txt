@@ -18,6 +18,6 @@ mysql -u root -p --host=destination_server mydatabase < /path/to/destination/bac
 
 
 
-
+docker exec -it mysql8_bd1 bash
 
 
