@@ -1,0 +1,53 @@
+[
+    {
+      "nombre": "Juan Pérez",
+      "provincia": "Buenos Aires",
+      "emails": ["juan.perez@email.com", "jperez@empresa.com"]
+    },
+    {
+      "nombre": "María Gómez",
+      "provincia": "Córdoba",
+      "emails": ["maria.gomez@email.com"]
+    },
+    {
+      "nombre": "Carlos López",
+      "provincia": "Santa Fe",
+      "emails": ["carlos.lopez@email.com", "clopez@negocios.com"]
+    },
+    {
+      "nombre": "Ana Fernández",
+      "provincia": "Mendoza",
+      "emails": ["ana.fernandez@email.com"]
+    },
+    {
+      "nombre": "Lucía Ramírez",
+      "provincia": "Tucumán",
+      "emails": ["lucia.ramirez@email.com", "lramirez@compania.com"]
+    },
+    {
+      "nombre": "Pedro Torres",
+      "provincia": "Salta",
+      "emails": ["pedro.torres@email.com"]
+    },
+    {
+      "nombre": "Sofía Díaz",
+      "provincia": "Chaco",
+      "emails": ["sofia.diaz@email.com", "sdiaz@empresa.com"]
+    },
+    {
+      "nombre": "Miguel Herrera",
+      "provincia": "Neuquén",
+      "emails": ["miguel.herrera@email.com"]
+    },
+    {
+      "nombre": "Valentina Rojas",
+      "provincia": "Entre Ríos",
+      "emails": ["valentina.rojas@email.com", "vrojas@negocios.com"]
+    },
+    {
+      "nombre": "Martín Castro",
+      "provincia": "San Luis",
+      "emails": ["martin.castro@email.com"]
+    }
+  ]
+  

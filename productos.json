@@ -1,0 +1,58 @@
+[
+      {
+        "nombre": "Laptop Dell XPS 13",
+        "descripcion": "Ultrabook con procesador Intel i7 y 16GB RAM",
+        "stock_historial": [
+          { "fecha": "2025-01-01", "tipo": "compra", "cantidad": 15, "precio_unitario": 950.00 },
+          { "fecha": "2025-02-01", "tipo": "venta", "cantidad": 3, "precio_unitario": 1049.99 },
+          { "fecha": "2025-03-01", "tipo": "venta", "cantidad": 2, "precio_unitario": 1099.99 }
+        ],
+        "precio_historial": [
+          { "fecha": "2025-01-01", "precio": 999.99 },
+          { "fecha": "2025-02-01", "precio": 1049.99 },
+          { "fecha": "2025-03-01", "precio": 1099.99 }
+        ]
+      },
+      {
+        "nombre": "Smartphone Samsung Galaxy S24",
+        "descripcion": "Smartphone con pantalla AMOLED y cámara de 108 MP",
+        "stock_historial": [
+          { "fecha": "2025-01-01", "tipo": "compra", "cantidad": 50, "precio_unitario": 750.00 },
+          { "fecha": "2025-02-01", "tipo": "venta", "cantidad": 10, "precio_unitario": 849.99 },
+          { "fecha": "2025-03-01", "tipo": "venta", "cantidad": 10, "precio_unitario": 899.99 }
+        ],
+        "precio_historial": [
+          { "fecha": "2025-01-01", "precio": 799.99 },
+          { "fecha": "2025-02-01", "precio": 849.99 },
+          { "fecha": "2025-03-01", "precio": 899.99 }
+        ]
+      },
+      {
+        "nombre": "Monitor LG UltraFine 4K",
+        "descripcion": "Monitor 4K IPS con USB-C y HDR",
+        "stock_historial": [
+          { "fecha": "2025-01-01", "tipo": "compra", "cantidad": 25, "precio_unitario": 450.00 },
+          { "fecha": "2025-02-01", "tipo": "venta", "cantidad": 5, "precio_unitario": 529.99 },
+          { "fecha": "2025-03-01", "tipo": "venta", "cantidad": 2, "precio_unitario": 549.99 }
+        ],
+        "precio_historial": [
+          { "fecha": "2025-01-01", "precio": 499.99 },
+          { "fecha": "2025-02-01", "precio": 529.99 },
+          { "fecha": "2025-03-01", "precio": 549.99 }
+        ]
+      },
+      {
+        "nombre": "Teclado Mecánico Corsair K95",
+        "descripcion": "Teclado mecánico RGB con interruptores Cherry MX",
+        "stock_historial": [
+          { "fecha": "2025-01-01", "tipo": "compra", "cantidad": 100, "precio_unitario": 180.00 },
+          { "fecha": "2025-02-01", "tipo": "venta", "cantidad": 15, "precio_unitario": 209.99 },
+          { "fecha": "2025-03-01", "tipo": "venta", "cantidad": 10, "precio_unitario": 219.99 }
+        ],
+        "precio_historial": [
+          { "fecha": "2025-01-01", "precio": 199.99 },
+          { "fecha": "2025-02-01", "precio": 209.99 },
+          { "fecha": "2025-03-01", "precio": 219.99 }
+        ]
+      }
+ ]

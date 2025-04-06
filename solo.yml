@@ -1,0 +1,21 @@
+services:
+  mongodb_solo:
+    build:
+      context: .
+      dockerfile: dockerfile_solo
+    container_name: mongodb_solo
+    hostname: mongodb_solo
+    volumes:
+      - ./mydata_solo:/data/db/
+      - ./mylogs_solo:/var/log/mongodb/
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - "27017:27017"
+
+
+  
+

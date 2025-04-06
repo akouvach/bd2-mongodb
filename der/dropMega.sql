@@ -43,9 +43,19 @@ foreign key (producto_id) references productos(id);
 Alter table detalles_pedido add constraint fk_pedidos
 foreign key (pedido_id) references pedidos(id);
 
+
+delete from detalles_pedido where pedido_id in 
+(
 select dp.pedido_id 
 from detalles_pedido dp 
-where dp.pedido_id not in (select aux.id from pedidos aux where aux.id = dp.pedido_id);
+where dp.pedido_id not in (select aux.id 
+from pedidos aux where aux.id = dp.pedido_id));
+
+select distinct concat('delete from detalles_pedido where pedido_id = ',dp.pedido_id,';') as instruccion 
+from detalles_pedido dp 
+where dp.pedido_id not in (select aux.id 
+from pedidos aux where aux.id = dp.pedido_id);
+
 
 select * from detalles_pedido where pedido_id = 100000;
 select * from pedidos where id = 100000;
@@ -69,6 +79,8 @@ CREATE INDEX idx_pedido ON detalles_pedido (pedido_id);
 CREATE INDEX idx_clientes_prov ON clientes (provincia);
 CREATE INDEX idx_clientes_tipo ON clientes (tipo);
 
+
+DROP INDEX fk_pedidos ON detalles_pedido;
 
 DROP INDEX idx_pedido ON detalles_pedido;
 DROP INDEX idx_clientes_prov ON clientes;

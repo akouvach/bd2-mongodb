@@ -85,15 +85,82 @@ Select SQL_NO_CACHE * from detalles_pedido;
 
 
 /* cantidad de registros por tabla */
-select count(*) as cantReg from clientes;
+
+select 'Clientes' , count(*) as cantReg9 from clientes
+union all
+select 'Pedidos' , count(*) as cantReg3 from pedidos
+union all
+select 'Productos' , count('pepe') as cantReg4 from productos
+union all
+select 'Detalles_Pedido' , count(12587) as cantReg4 from detalles_pedido;
+
+/*
+Fede 90500
+*/
+
+/* natural join */
+Select count(1)
+from clientes c, pedidos p
+where p.cliente_id = c.id;
+
+/* inner join  */
+Select *
+from clientes c inner join pedidos p on (p.cliente_id = c.id);
+
+costo 30408 fullscan C  non uniqu key lookup p (con indice fk_clientes)
+
+costo 39319 full table scan p    uni key look p C (Sin indice)
 
 
-select count(1) as cantReg from clientes;
+/*
+tipo de datos
+PK
+UK
+check constraints (validaciones a nivel columna)
 
-select count(provincia) as cantReg from clientes;
+FK : integridad referencial (garantiza que los datos de una tabla 
+existen en otra...) 
+
+*/
+
+/* left join  */
+Select *
+from clientes c left join pedidos p on (p.cliente_id = c.id)
+where p.fecha is null
+order by p.cliente_id;
+
+Select *
+from clientes c 
+where not exists (select aux.cliente_id 
+	from pedidos aux 
+	where aux.cliente_id = c.id);
+
+
+delete from pedidos where cliente_id = 1;
+
+select p.fecha, dp.*
+from detalles_pedido dp inner join pedidos p on (dp.pedido_id = p.id)
+where dp.pedido_id = 4;
+
+1.75 con indice fk_pedidos
+112 602 sin indice
+1.5 con indice pk pedido-producto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 select count(1) as cantReg from detalles_pedido; /* 114885 */
-
 select count(cantidad) as cantReg from detalles_pedido; /* 114885 */
 
 
@@ -152,10 +219,19 @@ con fk e indice: 83112
 
 
 
-Select nombre
-from clientes 
-where email = 'manolanicolas@example.net'
-and provincia = "Buenos Aires";
+Select *
+from clientes
+where email = 'xmorcillo@example.net'
+and provincia = "Corrientes"
+and tipo = 'C'
+and id = 4;
+
+idx_clientes_tipo 15.50
+idx_clientes_prov 5
+email 1
+
+
+$ 1 000 000 
 
 /* u$s 500 Carlo: por provincia  / Gabriel  / Johana  provincia */
 

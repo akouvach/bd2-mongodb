@@ -20,9 +20,47 @@ mysql -u root -p --host=destination_server mydatabase < /path/to/destination/bac
 
 docker exec -it mysql8_bd1 bash
 
+https://www.mongodb.com/docs/manual/reference/method/db.collection.remove/
 
 
 .mongorc.js
 
 
 mongosh "mongodb://root:password@localhost:27017/?tls=false"
+
+show dbs 
+show collections
+
+
+mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=productos --db=ventas --authenticationDatabase admin --file=productos.json --jsonArray
+mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=clientes --db=ventas --authenticationDatabase admin --file=clientes.json --jsonArray
+mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=ventas --db=ventas --authenticationDatabase admin --file=ventas.json --jsonArray
+
+
+mongoexport --host localhost --port 27017 --db ventas --collection clientes --query '{ "provincia": { "$exists": true } }' --out clientes_filtrados.json --jsonArray
+
+Backup:
+mongodump --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=productos --db=ventas --authenticationDatabase admin --out ventasdb
+
+
+
+https://www.mongodb.com/try/download/database-tools
+https://www.mongodb.com/try/download/shell
+
+
+mongoimport --host "localhost" --port "27017" --db "ventas" --collection "productos" --file "productos.json"
+
+
+mongoimport --db ventas --collection ventas --file ventas.json --jsonArray
+mongoimport --db ventas --collection productos --file productos.json --jsonArray
+mongoimport --db ventas --collection clientes --file clientes.json --jsonArray
+
+db.productos.createIndex({nombre:1})
+
+db.productos.find({nombre:"Monitor LG UltraFine 4K"}).explain("executionStats");
+
+
+mongosh "mongodb://localhost:27017,localhost:27018,localhost:27019/?replicaSet=rs0"
+
+
+openssl rand -base64 756 > secrets/mongodb-keyfile
