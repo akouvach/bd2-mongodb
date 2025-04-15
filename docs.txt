@@ -72,6 +72,11 @@ texto que finalian con ..
 db.collection.find({ "campo": /pattern$/ })
 db.estudiantes.find({"nombre" : /a$/ })
 
+Búsqueda insensible a mayúsculas y minúsculas: /pattern/i -Encuentra documentos donde el campo coincide con el patrón, sin importar mayúsculas o minúsculas.
+db.collection.find({ "campo": /pattern/i })
+db.estudiantes.find({"nombre" : /LI/i })
+
+
 
 mongoexport --host localhost --port 27017 --db ventas --collection clientes --query '{ "provincia": { "$exists": true } }' --out clientes_filtrados.json --jsonArray
 
