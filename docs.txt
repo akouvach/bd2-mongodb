@@ -13,6 +13,11 @@ to export:
 mysqldump -u root -p root_password --host=localhost mega > megabackup.sql
 
 
+to backup 
+mongodump -u root --authenticationMechanism SCRAM-SHA-1 --authenticationDatabase admin --db ventas --out backup
+mongodump --uri "mongodb://root:password@localhost:27017/ventas?tls=false" --authenticationDatabase admin --out backup
+
+
 to import:
 mysql -u root -p --host=destination_server mydatabase < /path/to/destination/backup.sql
 
@@ -23,10 +28,21 @@ docker exec -it mysql8_bd1 bash
 https://www.mongodb.com/docs/manual/reference/method/db.collection.remove/
 
 
+para ejecutar localmente
+mongod --dbpath /your/custom/folder
+mongod --dbpath /your/data --port 28015
+
+
 .mongorc.js
 
 
 mongosh "mongodb://root:password@localhost:27017/?tls=false"
+
+mongosh "mongodb://root:password@localhost:27017/?tls=false" insert_ventas.js
+
+
+El maximo de un documento es de 16 mb en mongodb
+
 
 show dbs 
 show collections
@@ -35,6 +51,26 @@ show collections
 mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=productos --db=ventas --authenticationDatabase admin --file=productos.json --jsonArray
 mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=clientes --db=ventas --authenticationDatabase admin --file=clientes.json --jsonArray
 mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=ventas --db=ventas --authenticationDatabase admin --file=ventas.json --jsonArray
+
+
+
+db.collection.updateMany(
+  {}, // Match all documents
+  { $set: { fecha: ISODate("$fecha") } } 
+);
+
+
+db.clientes.find({nombre:/^J/})
+
+db.clientes.find({nombre:{$regex:/^J/}})
+
+db.collection.find({
+  name: { $regex: "^[a-z]", $options: "i" }
+})
+
+texto que finalian con ..
+db.collection.find({ "campo": /pattern$/ })
+db.estudiantes.find({"nombre" : /a$/ })
 
 
 mongoexport --host localhost --port 27017 --db ventas --collection clientes --query '{ "provincia": { "$exists": true } }' --out clientes_filtrados.json --jsonArray

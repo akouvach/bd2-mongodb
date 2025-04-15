@@ -1,0 +1,7 @@
+{
+variable1 : "pepe",
+variable2 : "30/12/1989",
+variable3 : 15,
+ventasDelPeriodo: 158,
+fechaDeAlta: "15/15/1978"
+}

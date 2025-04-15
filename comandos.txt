@@ -1,0 +1,19 @@
+Para iniciar sesión en en la base de datos
+mongosh "mongodb://root:password@localhost:27017/?tls=false"
+
+Para importar desde la consola:
+mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=productos --db=ventas --authenticationDatabase admin --file=productos.json --jsonArray
+mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=clientes --db=ventas --authenticationDatabase admin --file=clientes.json --jsonArray
+mongoimport --host=localhost --port=27017 --username=root --authenticationMechanism SCRAM-SHA-1 --collection=ventas --db=ventas --authenticationDatabase admin --file=ventas.json --jsonArray
+
+Para ejecutar un script en javascript (desde mongosh):
+load("script.js")
+
+Para posicionarse en una base de datos:
+use nombreBase
+
+Para visualizar las bases existentes en el servidor:
+show dbs
+
+Para visualizar las colecciones en una base de datos:
+show collections

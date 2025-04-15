@@ -1,5 +1,6 @@
 [
       {
+        "_id":"1",
         "nombre": "Laptop Dell XPS 13",
         "descripcion": "Ultrabook con procesador Intel i7 y 16GB RAM",
         "stock_historial": [
@@ -14,6 +15,7 @@
         ]
       },
       {
+        "_id":"2",
         "nombre": "Smartphone Samsung Galaxy S24",
         "descripcion": "Smartphone con pantalla AMOLED y cámara de 108 MP",
         "stock_historial": [
@@ -28,6 +30,7 @@
         ]
       },
       {
+        "_id":"3",
         "nombre": "Monitor LG UltraFine 4K",
         "descripcion": "Monitor 4K IPS con USB-C y HDR",
         "stock_historial": [
@@ -42,6 +45,7 @@
         ]
       },
       {
+        "_id":"4",
         "nombre": "Teclado Mecánico Corsair K95",
         "descripcion": "Teclado mecánico RGB con interruptores Cherry MX",
         "stock_historial": [
@@ -54,5 +58,15 @@
           { "fecha": "2025-02-01", "precio": 209.99 },
           { "fecha": "2025-03-01", "precio": 219.99 }
         ]
+      },
+      {
+        "_id":"5",
+        "codigo": "TEC-MEC-INT",
+        "descripcion": "Teclado mecánico RGB con interruptores Cherry MX",
+        "detalle":{
+          "color":["blanco","negro"],
+          "material":"plástico",
+          "peso":1.2
+        }
       }
- ]
+    ]

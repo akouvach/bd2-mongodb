@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+    <h1>Hola Mundo</h1>
+    <button onclick="haceralgo();">Presione aquí</button>
+    
+    <script>
+        let datos = {
+            nombre: "Juan",
+            edad: 30,
+            ciudad: "Madrid",
+            hobbies: ["futbol", "correr", "leer"],
+            direccion: {
+                calle: "Calle Falsa",
+                numero: 123,
+                ciudad: "Madrid"
+            },
+        };
+        function haceralgo() {
+            let mi_str = JSON.stringify(datos)
+            console.log(mi_str);
+
+            let mi_obj = JSON.parse(mi_str);
+            console.log(mi_obj);            
+            console.log(mi_obj.ciudad);
+
+        }
+    </script>
+</body>
+</html>
